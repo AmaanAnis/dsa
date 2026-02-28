@@ -46,7 +46,13 @@
 
 import numpy as np
 
-val = np.linspace(10, 20, 5)
+# val = np.linspace(10, 20, 5)
+
+# for i in val:
+#     print(i, end=" ")
+
+
+val = np.arange(10, 20, 5)
 
 for i in val:
     print(i, end=" ")
