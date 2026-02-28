@@ -34,12 +34,19 @@
 # for i in range(0, n/2):
 #     print(i)
 
-n = 5
-u_n = n // 2
-print(u_n)
-m = 10
+# n = 5
+# u_n = n // 2
+# print(u_n)
+# m = 10
 
 # for i in range(0, n):
 #     for j in range(0, m):
 #         for k in range(0, n):
 #             print(f"hello {i} {j} {k}")
+
+import numpy as np
+
+val = np.linspace(10, 20, 5)
+
+for i in val:
+    print(i, end=" ")
