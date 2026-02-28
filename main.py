@@ -48,11 +48,15 @@ import numpy as np
 
 # val = np.linspace(10, 20, 5)
 
-# for i in val:
-#     print(i, end=" ")
+# val = np.arange(10, 20, 5)
 
+# val = np.logspace(10, 20, 5)
 
-val = np.arange(10, 20, 5)
+# val = np.zeros(10)
+
+# val = np.ones(10)
+
+val = np.full(10,5)
 
 for i in val:
     print(i, end=" ")
