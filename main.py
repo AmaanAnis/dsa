@@ -56,7 +56,19 @@ import numpy as np
 
 # val = np.ones(10)
 
-val = np.full(10,5)
+# val = np.full(10,5)
 
-for i in val:
-    print(i, end=" ")
+# for i in val:
+#     print(i, end=" ")
+
+zero_dim = np.array(10)
+print(zero_dim)
+
+one_dim = np.array([1,2,3,4,5,6])
+print(one_dim)
+
+two_dim = np.array([[1,2,3], [4,5,6], [6,7,8]])
+print(two_dim)
+
+three_dim = np.array([[[1,2],[3,4]],[[5,6],[7,8]]])
+print(three_dim)
