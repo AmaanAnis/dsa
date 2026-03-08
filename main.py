@@ -139,15 +139,35 @@ import numpy as np
 # fizzBuzz(n)
 
 
-def numberOfSteps(num: int) -> int:
-    result = 0
-    while num > 0:
-        is_even = num % 2 == 0
-        if is_even:
-            num /= 2
-        else:
-            num -= 1
-        result += 1
-    return result
+# def numberOfSteps(num: int) -> int:
+#     result = 0
+#     while num > 0:
+#         is_even = num % 2 == 0
+#         if is_even:
+#             num /= 2
+#         else:
+#             num -= 1
+#         result += 1
+#     return result
 
-print(numberOfSteps(14))
+# print(numberOfSteps(14))
+
+from typing import Optional
+
+
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+
+class Solution:
+    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        middle = head
+        end = head
+        while end != None and end.next != None:
+            middle = middle.next
+            end = end.next.next
+
+        return middle
