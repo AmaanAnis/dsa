@@ -86,13 +86,32 @@ import numpy as np
 #     temp.next
 
 
-def runningSum(nums):
-    for i in nums:
-        i = 1
-        nums[i] += nums[i - 1]
+# def runningSum(nums):
+#     for i in nums:
+#         i = 1
+#         nums[i] += nums[i - 1]
 
-    return nums
+#     return nums
 
 
-nums = [1, 2, 3, 4]
-runningSum(nums)
+# nums = [1, 2, 3, 4]
+# runningSum(nums)
+
+from typing import List 
+
+def maximumWealth(accounts: List[List[int]]) -> int:
+    max_wealth = 0
+    for customer in accounts:
+        currect_customer_wealth = 0
+
+        for bank in customer:
+            currect_customer_wealth += bank
+
+        max_wealth = max(max_wealth, currect_customer_wealth)
+
+    return max_wealth
+
+
+accounts = [[1,2,3],[3,2,1]]
+
+print(maximumWealth(accounts))
