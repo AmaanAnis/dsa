@@ -97,21 +97,43 @@ import numpy as np
 # nums = [1, 2, 3, 4]
 # runningSum(nums)
 
-from typing import List 
+# from typing import List
 
-def maximumWealth(accounts: List[List[int]]) -> int:
-    max_wealth = 0
-    for customer in accounts:
-        currect_customer_wealth = 0
+# def maximumWealth(accounts: List[List[int]]) -> int:
+#     max_wealth = 0
+#     for customer in accounts:
+#         currect_customer_wealth = 0
 
-        for bank in customer:
-            currect_customer_wealth += bank
+#         for bank in customer:
+#             currect_customer_wealth += bank
 
-        max_wealth = max(max_wealth, currect_customer_wealth)
+#         max_wealth = max(max_wealth, currect_customer_wealth)
 
-    return max_wealth
+#     return max_wealth
 
 
-accounts = [[1,2,3],[3,2,1]]
+# accounts = [[1,2,3],[3,2,1]]
 
-print(maximumWealth(accounts))
+# print(maximumWealth(accounts))
+
+from typing import List
+
+
+def fizzBuzz(n: int) -> List[str]:
+    answer = []
+    for i in range(1, n + 1):
+        divisible_by_3 = i % 3 == 0
+        divisible_by_5 = i % 5 == 0
+        if divisible_by_3 and divisible_by_5:
+            answer.append("FizzBuzz")
+        elif divisible_by_3:
+            answer.append("Fizz")
+        elif divisible_by_5:
+            answer.append("Buzz")
+        else:
+            answer.append(str(i))
+    return answer
+
+
+n = 3
+fizzBuzz(n)
