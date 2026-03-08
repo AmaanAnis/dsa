@@ -116,24 +116,38 @@ import numpy as np
 
 # print(maximumWealth(accounts))
 
-from typing import List
+# from typing import List
 
 
-def fizzBuzz(n: int) -> List[str]:
-    answer = []
-    for i in range(1, n + 1):
-        divisible_by_3 = i % 3 == 0
-        divisible_by_5 = i % 5 == 0
-        if divisible_by_3 and divisible_by_5:
-            answer.append("FizzBuzz")
-        elif divisible_by_3:
-            answer.append("Fizz")
-        elif divisible_by_5:
-            answer.append("Buzz")
+# def fizzBuzz(n: int) -> List[str]:
+#     answer = []
+#     for i in range(1, n + 1):
+#         divisible_by_3 = i % 3 == 0
+#         divisible_by_5 = i % 5 == 0
+#         if divisible_by_3 and divisible_by_5:
+#             answer.append("FizzBuzz")
+#         elif divisible_by_3:
+#             answer.append("Fizz")
+#         elif divisible_by_5:
+#             answer.append("Buzz")
+#         else:
+#             answer.append(str(i))
+#     return answer
+
+
+# n = 3
+# fizzBuzz(n)
+
+
+def numberOfSteps(num: int) -> int:
+    result = 0
+    while num > 0:
+        is_even = num % 2 == 0
+        if is_even:
+            num /= 2
         else:
-            answer.append(str(i))
-    return answer
+            num -= 1
+        result += 1
+    return result
 
-
-n = 3
-fizzBuzz(n)
+print(numberOfSteps(14))
