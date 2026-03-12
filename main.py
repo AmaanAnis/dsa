@@ -152,22 +152,77 @@ import numpy as np
 
 # print(numberOfSteps(14))
 
-from typing import Optional
+# from typing import Optional
 
 
-# Definition for singly-linked list.
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
+# # Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
 
 
-class Solution:
-    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        middle = head
-        end = head
-        while end != None and end.next != None:
-            middle = middle.next
-            end = end.next.next
+# class Solution:
+#     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+#         middle = head
+#         end = head
+#         while end != None and end.next != None:
+#             middle = middle.next
+#             end = end.next.next
 
-        return middle
+#         return middle
+
+
+# BST 
+class Node:
+    def __init__(self, value):
+        self.left = None
+        self.right = None
+        self.data = value
+
+def insert(root, value):
+    if(root == None):
+        return Node(value)
+    if(root.data == value):
+        return value
+    if(root.data > value):
+        root.left = insert(root.left, value)
+    else:
+        root.right = insert(root.right, value)
+    return root
+
+def search(root, value):
+    if(root == None):
+        print("Element not found", end='\n')
+        return
+    if(root.data == value):
+        print("Element found", end='\n')
+        return
+    if(root.data > value):
+        search(root.left, value)
+    else:
+        search(root.right, value)
+
+def in_order(root):
+    if(root != None):
+        in_order(root.left)
+        print(root.data, end=' ')
+        in_order(root.right)
+
+# root = Node(20)
+# root.left = Node(15) 
+# root.right = Node(30) 
+# root.left.left = Node(12) 
+# root.left.right = Node(18)
+
+root = insert(None, 20)
+root = insert(root, 15)
+root = insert(root, 30)
+root = insert(root, 40)
+root = insert(root, 12)
+root = insert(root, 18)
+root = insert(root, 25)
+root = insert(root, 50)
+in_order(root)
+search(root, 90)
+search(root, 20)
