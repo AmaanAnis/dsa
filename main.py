@@ -239,20 +239,43 @@ def in_order(root):
 # root.left.left = Node(12) 
 # root.left.right = Node(18)
 
-root = insert(None, 20)
-root = insert(root, 15)
-root = insert(root, 30)
-root = insert(root, 40)
-root = insert(root, 12)
-root = insert(root, 18)
-root = insert(root, 25)
-root = insert(root, 50)
-in_order(root)
-print("\n")
-# search(root, 90)
+# root = insert(None, 20)
+# root = insert(root, 15)
+# root = insert(root, 30)
+# root = insert(root, 40)
+# root = insert(root, 12)
+# root = insert(root, 18)
+# root = insert(root, 25)
+# root = insert(root, 50)
+# in_order(root)
 # print("\n")
-# search(root, 20)
+# # search(root, 90)
+# # print("\n")
+# # search(root, 20)
+# # print("\n")
+# delete(root, 20)
 # print("\n")
-delete(root, 20)
-print("\n")
-in_order(root)
+# in_order(root)
+
+# nums = [1, 2, 3, 4, 5]
+
+# for i in range(len(nums)-1, 0, -1):
+#     j = int(i * (i+1) / (i+1))  # simple swap
+#     nums[i], nums[j] = nums[j], nums[i]
+
+# print(nums)
+
+# from collections import deque
+
+nums = [32, 64, 25, 45, 20, 15]
+
+def bubble_sort(ln):
+    n = len(ln)
+    for i in range(n):
+        for j in range(n-1-i):
+            if ln[j] > ln[j+1]:
+                ln[j], ln[j+1] = ln[j+1], ln[j]
+    print(nums)
+
+bubble_sort(nums)
+    
